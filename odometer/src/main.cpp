@@ -1,18 +1,26 @@
+#define LGFX_TTGO_TDISPLAY   
+#define LGFX_AUTODETECT
+#define LGFX_USE_V1
+
+
 #include <Arduino.h>
+#include <LovyanGFX.hpp>
+#include <WiFi.h>
+#include <LGFX_AUTODETECT.hpp> 
 
-// put function declarations here:
-int myFunction(int, int);
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+static LGFX lcd;     
+
+void setup(void)
+{
+  lcd.init();
+  lcd.setRotation(0);
+  lcd.setBrightness(127);
+  lcd.setColorDepth(24);  
+  lcd.setCursor(10, 10);  
+  lcd.print("hello world1");   
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+void loop(void)
+{
 }
