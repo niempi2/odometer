@@ -18,7 +18,7 @@ void setup(void)
   lcd.setBrightness(127);
   lcd.setColorDepth(24);  
   lcd.setCursor(10, 10);  
-  lcd.print("hello world1");   
+  lcd.print("hello world3");   
 }
 
 void loop(void)
