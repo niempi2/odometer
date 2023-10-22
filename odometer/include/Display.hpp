@@ -2,6 +2,8 @@
 #define display_hpp
 
 #include "IView.hpp"
+#include "Battery.hpp"
+#include "OdoMeter.hpp"
 #include <LGFX_AUTODETECT.hpp>
 
 
@@ -14,7 +16,7 @@ class Display
     LGFX *lcd;
     public:
     void Refresh();
-    Display(LGFX *lcd);
+    Display(LGFX *lcd,Battery* battery,OdoMeter* odometer);
     ~Display();
 };
 #endif

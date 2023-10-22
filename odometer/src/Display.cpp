@@ -3,10 +3,10 @@
 #define LGFX_TTGO_TDISPLAY 
 #include "Display.hpp"
 #include "MainView.hpp"
-Display::Display(LGFX *lcd)
+Display::Display(LGFX *lcd,Battery* battery,OdoMeter* odometer)
 {
     this->lcd = lcd;
-    ActiveView = new MainView(new Battery(),new OdoMeter(2.4));
+    ActiveView = new MainView(battery,odometer);
 }
 Display::~Display()
 {

@@ -11,8 +11,8 @@
         if(this->lastPulse>0 && timeStamp > lastPulse)
         {
             this->distanceTravelled +=  this->wheelDiameter;
-            long timePassed= timePassed-this->lastPulse;
-            this->currentSpeed = this->wheelDiameter/(float)timePassed*3.6;
+            long timePassed= timeStamp-this->lastPulse;
+            this->currentSpeed = this->wheelDiameter/(float)timePassed*3600;
         }
         this->lastPulse = timeStamp;
     }

@@ -8,9 +8,14 @@
 #include <WiFi.h>
 #include <LGFX_AUTODETECT.hpp> 
 #include "display.hpp"
+#include "OdoMeter.hpp"
+#include "Battery.hpp"
 
 static LGFX lcd;     
-static Display display(&lcd);
+
+static OdoMeter odoMeter(2.4);
+static Battery battery;
+static Display display(&lcd,&battery,&odoMeter);
 void setup(void)
 {
   Serial.begin(9600);
@@ -25,4 +30,10 @@ void setup(void)
 
 void loop(void)
 {
+while (true)
+{
+  odoMeter.Pulse(millis());
+  display.Refresh(); 
+  delay(random()%800+1000); 
+}
 }
