@@ -5,7 +5,7 @@
 #include "MainView.hpp"
 Display::Display(LGFX *lcd)
 {
-    lcd = lcd;
+    this->lcd = lcd;
     ActiveView = new MainView();
 }
 Display::~Display()
