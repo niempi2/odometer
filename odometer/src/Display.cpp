@@ -6,7 +6,7 @@
 Display::Display(LGFX *lcd)
 {
     this->lcd = lcd;
-    ActiveView = new MainView(new Battery(),new OdoMeter());
+    ActiveView = new MainView(new Battery(),new OdoMeter(2.4));
 }
 Display::~Display()
 {

@@ -1,8 +1,29 @@
     #include "OdoMeter.hpp"
     float OdoMeter::GetSpeed(){
-        return 22.3;
+        return currentSpeed;
     }
     float OdoMeter::GetDistance()
     {
-        return 34.3;
+        return this->distanceTravelled/(float)1000;
     }
+    void OdoMeter::Pulse(long timeStamp)
+    {
+        if(this->lastPulse>0 && timeStamp > lastPulse)
+        {
+            this->distanceTravelled +=  this->wheelDiameter;
+            long timePassed= timePassed-this->lastPulse;
+            this->currentSpeed = this->wheelDiameter/(float)timePassed*3.6;
+        }
+        this->lastPulse = timeStamp;
+    }
+
+     OdoMeter::OdoMeter(float wheelDiameter)
+     {
+        this->wheelDiameter= wheelDiameter;
+        this->distanceTravelled=0;
+        this->lastPulse=0;
+        this->currentSpeed=0;
+
+     }
+
+
