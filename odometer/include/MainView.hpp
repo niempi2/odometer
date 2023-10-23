@@ -13,6 +13,7 @@ virtual void Refresh(LGFX *lcd);
 private:
 Battery* battery;
 OdoMeter* odoMeter;
-
+IView* OnLeftButtonPress();
+IView* OnRightButtonPress();
 };
 #endif

@@ -5,6 +5,8 @@ class IView
 {
     public:
     virtual void Refresh(LGFX *lcd);
+    virtual IView* OnLeftButtonPress();
+    virtual IView* OnRightButtonPress();
     
 };
 #endif

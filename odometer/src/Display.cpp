@@ -16,3 +16,13 @@ void Display::Refresh()
 {   
     ActiveView->Refresh(lcd);
 }
+void Display::OnLeftButtonPress()
+{
+    ActiveView=ActiveView->OnLeftButtonPress();
+
+}
+void Display::OnRightButtonPress()
+{
+    
+
+}

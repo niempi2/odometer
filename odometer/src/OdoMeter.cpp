@@ -6,12 +6,12 @@
     {
         return this->distanceTravelled/(float)1000;
     }
-    void OdoMeter::Pulse(long timeStamp)
+    void OdoMeter::Pulse(unsigned long timeStamp)
     {
         if(this->lastPulse>0 && timeStamp > lastPulse)
         {
             this->distanceTravelled +=  this->wheelDiameter;
-            long timePassed= timeStamp-this->lastPulse;
+            unsigned long timePassed= timeStamp-this->lastPulse;
             this->currentSpeed = this->wheelDiameter/(float)timePassed*3600;
         }
         this->lastPulse = timeStamp;
@@ -23,7 +23,10 @@
         this->distanceTravelled=0;
         this->lastPulse=0;
         this->currentSpeed=0;
-
+     }
+     void OdoMeter::ResetDistance()
+     {
+           distanceTravelled=0;  
      }
 
 

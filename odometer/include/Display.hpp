@@ -16,6 +16,8 @@ class Display
     LGFX *lcd;
     public:
     void Refresh();
+    void OnLeftButtonPress();
+    void OnRightButtonPress();
     Display(LGFX *lcd,Battery* battery,OdoMeter* odometer);
     ~Display();
 };

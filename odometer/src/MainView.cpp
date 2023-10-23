@@ -16,6 +16,16 @@ void MainView::Refresh(LGFX *lcd)
       lcd->setCursor(10, 80);
       lcd->print(odoMeter->GetDistance());
       lcd->setCursor(10, 110);
-      lcd->print(odoMeter->GetSpeed());
-    
+      lcd->print(odoMeter->GetSpeed());         
 }
+
+IView* MainView::OnLeftButtonPress()
+{
+      odoMeter->ResetDistance();
+      return this;
+}
+IView* MainView::OnRightButtonPress()
+{
+      return this;
+}
+ 
