@@ -4,15 +4,14 @@
 #include "IView.hpp"
 #include "Battery.hpp"
 #include "OdoMeter.hpp"
-
+#include "SystemMain.hpp"
 class MainView:public IView
 {
 public:
-MainView(Battery* battery,OdoMeter* odoMeter);
+MainView(SystemMain *system);
 virtual void Refresh(LGFX *lcd);
 private:
-Battery* battery;
-OdoMeter* odoMeter;
+SystemMain *system;
 IView* OnLeftButtonPress();
 IView* OnRightButtonPress();
 };

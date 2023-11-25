@@ -13,7 +13,4 @@ public:
     Battery(/* args */);
     ~Battery();
 };
-
-
-
 #endif

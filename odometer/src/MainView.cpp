@@ -1,27 +1,25 @@
 #include "Mainview.hpp"
-#include "Battery.hpp"
-#include "OdoMeter.hpp"
-MainView::MainView(Battery* battery,OdoMeter* odoMeter)
+#include "SystemMain.hpp"
+MainView::MainView(SystemMain *system)
 {
-     this->battery=battery;
-     this->odoMeter=odoMeter; 
+     this->system= system;
 
 }
 void MainView::Refresh(LGFX *lcd)
 {
       lcd->setCursor(10, 20);
-      lcd->print(battery->GetVoltage());
+      lcd->print(system->battery->GetVoltage());
       lcd->setCursor(10, 50);
-      lcd->print(battery->GetPrecentage());
+      lcd->print(system->battery->GetPrecentage());
       lcd->setCursor(10, 80);
-      lcd->print(odoMeter->GetDistance());
+      lcd->print(system->odoMeter->GetDistance());
       lcd->setCursor(10, 110);
-      lcd->print(odoMeter->GetSpeed());         
+      lcd->print(system->odoMeter->GetSpeed());         
 }
 
 IView* MainView::OnLeftButtonPress()
 {
-      odoMeter->ResetDistance();
+      system->odoMeter->ResetDistance();
       return this;
 }
 IView* MainView::OnRightButtonPress()

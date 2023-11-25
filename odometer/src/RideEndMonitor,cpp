@@ -1,0 +1,10 @@
+#include "RideEndMonitor.hpp"
+
+void RideEndMonitor::RideEnded()
+{
+    //check for battery
+    //check for wifi
+    //connect wifi
+    //send to starva
+    //disable wifi
+};
